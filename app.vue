@@ -9,9 +9,7 @@ useSeoMeta(generateSEOMetaTags("app"));
 <template>
   <div class="light">
     <div class="bg-background-main text-basic-12 min-h-[100svh]">
-      <NuxtLayout>
-        <NuxtPage />
-      </NuxtLayout>
+      <NuxtLayout />
     </div>
   </div>
 </template>
