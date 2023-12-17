@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+import { createThemes } from "tw-colors";
 import themeConfig from "./constants/theme";
 
 export default {
@@ -15,9 +16,12 @@ export default {
       container: {
         center: true,
       },
-      colors: themeConfig.colors.light,
       zIndex: themeConfig.zIndex,
     },
   },
-  plugins: [],
+  plugins: [
+    createThemes({
+      ...themeConfig.colors,
+    }, { defaultTheme: "light" }),
+  ],
 };
