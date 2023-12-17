@@ -1,3 +1,91 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Poppins" ;
+    @apply bg-background-main;
+  }
+
+  .nuxt-icon svg {
+    margin-bottom: 0px !important;
+  }
+
+  .header-container {
+    @apply w-full p-container mx-auto;
+  }
+  @media (min-width: 1536px) {
+    .header-container {
+      max-width: 1440px;
+    }
+  }
+
+  .form-container {
+    @apply w-full p-container mx-auto;
+  }
+  @media (min-width: 1024px) {
+    .form-container {
+      max-width: 1024px;
+    }
+  }
+}
+
+
+@layer components {
+  .text-gradient-green {
+    background: linear-gradient(123deg, #05DEDF 4.13%, #5CF1B7 42.86%, #04A1B7 87.68%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .qinput-wrapper {
+    @apply overflow-hidden relative;
+  }
+  .qinput {
+    @apply rounded-xl w-full text-base pl-3 border border-basic-5 bg-basic-1 outline-none placeholder-basic-6 text-basic-12;
+  }
+  .qbutton {
+    @apply relative font-medium inline-flex shrink-0 items-center justify-center align-middle ease-linear leading-tight whitespace-nowrap cursor-pointer outline-none m-0 appearance-none box-border select-none overflow-hidden hover:opacity-90;
+  }
+  .bg-loading {
+    @apply bg-gradient-to-r from-line-2 to-line-2/30 animate-pulse rounded-lg;
+  }
+
+  .text-label {
+    @apply text-basic-9 text-base;
+  }
+
+  .shadow-xs {
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  }
+  .shadow-xsm {
+    box-shadow: 0px 1px 2px 2px rgba(16, 24, 40, 0.05);
+  }
+
+  .p-container {
+    @apply px-4 sm:px-6;
+  }
+
+  .center-x {
+    @apply flex items-center;
+  }
+  .centeral {
+    @apply flex items-center justify-center;
+  }
+
+  .box-container {
+    @apply p-4 md:p-6 rounded-xl bg-basic-1;
+  }
+
+  .form-item-wrapper {
+    @apply center-x justify-between space-x-3;
+  }
+  .form-item-label {
+    @apply flex-1 text-basic-12;
+  }
+  .form-item-description {
+    @apply text-basic-7 text-sm;
+  }
+}
