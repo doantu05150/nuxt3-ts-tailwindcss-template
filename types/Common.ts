@@ -3,3 +3,9 @@ export interface IMetaTag {
   description?: string
   image?: string
 }
+
+export interface ISelect {
+  label: string
+  value: string
+  icon?: string
+}

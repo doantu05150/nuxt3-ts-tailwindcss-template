@@ -7,7 +7,7 @@ const question = reactive({
 
 <template>
   <div>
-    <div class="box-container border border-basic-2">
+    <div class="box-container">
       <div class="flex flex-col space-y-4">
         <BaseInputArea v-model="question.content" label="Question" placeholder="Enter question" :required="true" :clearable="true" />
         <FormCreateOption />

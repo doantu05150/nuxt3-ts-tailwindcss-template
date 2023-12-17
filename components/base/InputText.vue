@@ -48,9 +48,9 @@ const name = computed(() => props.label || "oinput-text");
 const isPassword = computed(() => props.type === "password");
 const errorMsg = computed(() => internalError.value || props.error);
 const _type = computed(() => {
-  if (props.type === "password") {
+  if (props.type === "password")
     return isShowPassword.value ? "text" : "password";
-  }
+
   return props.type;
 });
 const disabledInput = computed(
@@ -70,81 +70,81 @@ const height = computed(() => {
   }
 });
 const highlightFocusStyles = computed(() => {
-  if (props.highlightFocus && isFocusing.value) {
+  if (props.highlightFocus && isFocusing.value)
     return "ring-1 ring-basic-2";
-  }
+
   return "";
 });
 
-const showIcons = computed(() => (isPassword.value || props.clearable || props.searchable))
-const showSearchIcon = computed(() => props.searchable && !isPassword.value && !inputValue.value)
-const showClearIcon = computed(() => props.clearable && inputValue.value && !isPassword.value)
+const showIcons = computed(() => (isPassword.value || props.clearable || props.searchable));
+const showSearchIcon = computed(() => props.searchable && !isPassword.value && !inputValue.value);
+const showClearIcon = computed(() => props.clearable && inputValue.value && !isPassword.value);
 
 watch(
   () => props.modelValue,
   (newValue) => {
-    if (inputValue.value === newValue) {
+    if (inputValue.value === newValue)
       return;
-    }
+
     inputValue.value = newValue;
   },
   { immediate: true, deep: true },
 );
 
 function onInput(event: any) {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   const text = event?.target?.value || "";
   emits("input", text);
   emits("update:modelValue", text);
 }
 
 function onEnter(event: any) {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   const text = event?.target?.value || "";
   hasSubmit.value = true;
   emits("enter", text);
 }
 
 function onSearch() {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   hasSubmit.value = true;
   emits("search", inputValue.value);
 }
 
 function onFocus() {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   isFocusing.value = true;
   emits("focus", inputValue.value);
 }
 
 function onBlur() {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   isFocusing.value = false;
   emits("blur", inputValue.value);
 }
 
 function clear() {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   hasSubmit.value = false;
   emits("update:modelValue", "");
   emits("enter");
 }
 
-function showPassword() {
-  isShowPassword.value = !isShowPassword.value;
-}
+// function showPassword() {
+//   isShowPassword.value = !isShowPassword.value;
+// }
 
 function focusInput() {
   if (inputRef.value) {
@@ -186,7 +186,7 @@ defineExpose({
         @keypress.enter="onEnter"
         @focus="onFocus"
         @blur="onBlur"
-      />
+      >
       <div
         v-if="showIcons"
         class="pl-2 pr-3 h-full center-x absolute top-0 right-0"

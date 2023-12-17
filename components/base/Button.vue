@@ -74,8 +74,8 @@ const hasDefaultSlot = computed(() => useSlots().default);
 const hasIcon = computed(() => props.iconLeft || props.iconRight);
 const btnSize = computed(() => {
   return (
-    sizeVariants[props.size] +
-    `${hasIcon.value && !hasDefaultSlot.value ? " !px-0" : ""}`
+    `${sizeVariants[props.size]
+    }${hasIcon.value && !hasDefaultSlot.value ? " !px-0" : ""}`
   );
 });
 const iconClass = computed(() => {
@@ -86,18 +86,18 @@ const iconClass = computed(() => {
 });
 const btnRounded = computed(() => roundedVariants[props.rounded]);
 const bgColor = computed(() => {
-  if (props.type === "solid") {
+  if (props.type === "solid")
     return colorVariants[props.color];
-  }
+
   return "";
 });
 const btnType = computed(() => {
-  if (props.type === "link") {
+  if (props.type === "link")
     return `bg-transparent ${outlineVariants[props.color]}`;
-  }
-  if (props.type === "outline") {
+
+  if (props.type === "outline")
     return `border ${outlineVariants[props.color]}`;
-  }
+
   return "text-txt-1";
 });
 const btnLoading = computed(() => (props.loading ? "loading" : ""));
@@ -113,9 +113,9 @@ const classes = computed(() => [
 ]);
 
 function handleClick(e: any) {
-  if (props.loading || props.disabled) {
+  if (props.loading || props.disabled)
     return;
-  }
+
   emits("click", e);
 }
 

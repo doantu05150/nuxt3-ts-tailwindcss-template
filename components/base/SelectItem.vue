@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import type { ISelect } from "~/types";
 
@@ -15,18 +14,18 @@ const isMultipleSelect = computed(() => Array.isArray(props.selectedList));
 
 const selectedOptions = computed(() => {
   const list = props.selectedList;
-  if (!list) {
+  if (!list)
     return [];
-  }
-  if (Array.isArray(list)) {
+
+  if (Array.isArray(list))
     return list;
-  }
+
   return [list];
 });
 
 const isSelected = computed(() => {
   const foundIndex = selectedOptions.value.findIndex(
-    (option) => option.value === props.option.value,
+    option => option.value === props.option.value,
   );
   return foundIndex > -1;
 });

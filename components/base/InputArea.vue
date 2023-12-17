@@ -32,7 +32,6 @@ const emits = defineEmits([
 const inputRef = ref();
 const inputValue = ref("");
 const internalError = ref("");
-const isShowPassword = ref(false);
 const isFocusing = ref(false);
 const hasSubmit = ref(false);
 
@@ -41,67 +40,54 @@ const errorMsg = computed(() => internalError.value || props.error);
 const disabledInput = computed(
   () => props.disabled || props.loading || props.readonly,
 );
-const height = computed(() => {
-  switch (props.size) {
-    case "sm":
-      return "h-9";
-    case "xl":
-      return "h-12";
-    case "lg":
-      return "h-11";
-    case "md":
-    default:
-      return "h-10";
-  }
-});
 const highlightFocusStyles = computed(() => {
-  if (props.highlightFocus && isFocusing.value) {
+  if (props.highlightFocus && isFocusing.value)
     return "ring-1 ring-basic-2";
-  }
+
   return "";
 });
 
 watch(
   () => props.modelValue,
   (newValue) => {
-    if (inputValue.value === newValue) {
+    if (inputValue.value === newValue)
       return;
-    }
+
     inputValue.value = newValue;
   },
   { immediate: true, deep: true },
 );
 
 function onInput(event: any) {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   const text = event?.target?.value || "";
   emits("input", text);
   emits("update:modelValue", text);
 }
 
 function onEnter(event: any) {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   const text = event?.target?.value || "";
   hasSubmit.value = true;
   emits("enter", text);
 }
 
 function onFocus() {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   isFocusing.value = true;
   emits("focus", inputValue.value);
 }
 
 function onBlur() {
-  if (disabledInput.value) {
+  if (disabledInput.value)
     return;
-  }
+
   isFocusing.value = false;
   emits("blur", inputValue.value);
 }

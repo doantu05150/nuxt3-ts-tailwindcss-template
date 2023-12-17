@@ -35,17 +35,17 @@ onClickOutside(selectedContentRef, () => {
 const displayText = computed(() => {
   const selected = selectedOption.value;
   if (Array.isArray(selected)) {
-    if (!selected.length) {
+    if (!selected.length)
       return props.placeholder;
-    }
+
     let titles = selected
       .slice(0, 2)
-      .map((option) => option.label)
+      .map(option => option.label)
       .join(", ");
 
-    if (selected.length > 2) {
+    if (selected.length > 2)
       titles += `+${selected.length - 2} more`;
-    }
+
     return titles;
   }
   return selected ? selected.label : props.placeholder;
@@ -66,21 +66,20 @@ function mapData() {
   if (props.modelValue) {
     if (typeof props.modelValue === "string") {
       const found = props.options.find(
-        (option) => option.value === props.modelValue,
+        option => option.value === props.modelValue,
       );
-      if (found) {
+      if (found)
         selectedOption.value = found;
-      }
-    } else if (Array.isArray(props.modelValue)) {
+    }
+    else if (Array.isArray(props.modelValue)) {
       const list = Array.isArray(selectedOption.value)
         ? selectedOption.value
         : [];
 
       props.modelValue.forEach((value: string) => {
-        const op = props.options.find((option) => option.value === value);
-        if (op) {
+        const op = props.options.find(option => option.value === value);
+        if (op)
           list.push(op);
-        }
       });
 
       selectedOption.value = [...list];
@@ -98,14 +97,16 @@ function updateVModel(option: ISelect) {
   if (typeof props.modelValue === "string") {
     selectedOption.value = option;
     emits("update:modelValue", option.value);
-  } else if (Array.isArray(props.modelValue)) {
+  }
+  else if (Array.isArray(props.modelValue)) {
     const iSe = isSelected(option);
     const so = Array.isArray(selectedOption.value) ? selectedOption.value : [];
-    if (!iSe) {
+    if (!iSe)
       selectedOption.value = [...so, option];
-    } else {
-      selectedOption.value = so.filter((opt) => opt.value !== option.value);
-    }
+
+    else
+      selectedOption.value = so.filter(opt => opt.value !== option.value);
+
     const options = selectedOption.value.map((opt: ISelect) => opt.value);
     emits("update:modelValue", options);
   }
@@ -113,27 +114,27 @@ function updateVModel(option: ISelect) {
 
 function isSelected(option: ISelect) {
   const selected = selectedOption.value;
-  if (!selected) {
+  if (!selected)
     return false;
-  }
-  if (Array.isArray(selected)) {
-    return !!selected.find((opt) => opt.value === option.value);
-  }
+
+  if (Array.isArray(selected))
+    return !!selected.find(opt => opt.value === option.value);
+
   return selected?.value === option.value;
 }
 
-const handleHide = () => {
+function handleHide() {
   isCollapse.value = false;
-};
+}
 
-const handleOpen = () => {
+function handleOpen() {
   isCollapse.value = true;
-};
+}
 
 useEventListener("keydown", (e: KeyboardEvent) => {
-  if (!isCollapse.value) {
+  if (!isCollapse.value)
     return;
-  }
+
   if (e.key === "Escape") {
     handleHide();
     e.preventDefault();
@@ -159,7 +160,7 @@ defineExpose({
           type="button"
           :value="displayText"
           class="qbutton flex-1 justify-start font-medium"
-        />
+        >
         <NuxtIcon
           name="chervon-down"
           class="text-xl transition-transform duration-150 ml-2"

@@ -9,20 +9,20 @@ const option = reactive({
     {
       id: 2,
       content: "",
-    }
-  ]
-})
+    },
+  ],
+});
 
 function addMoreOption() {
   option.startCount += 1;
   option.list.push({
     id: option.startCount,
     content: "",
-  })
+  });
 }
 
 function removeItem(id: number) {
-  option.list = option.list.filter(item => item.id !== id)
+  option.list = option.list.filter(item => item.id !== id);
 }
 </script>
 
