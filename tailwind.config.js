@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import themeConfig from "./constants/theme";
+
 export default {
   content: [
     "./components/**/*.{js,vue,ts}",
@@ -9,7 +11,13 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      container: {
+        center: true,
+      },
+      colors: themeConfig.colors.light,
+      zIndex: themeConfig.zIndex,
+    },
   },
   plugins: [],
 };

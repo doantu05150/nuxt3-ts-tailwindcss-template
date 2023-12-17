@@ -2,7 +2,6 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-
 ## Requirements
 Node 18x or newer
 

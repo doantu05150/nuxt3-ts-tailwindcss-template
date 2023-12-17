@@ -4,10 +4,10 @@ export default antfu(
   {
     stylistic: {
       indent: 2,
-      quotes: "single",
+      quotes: "double",
     },
     rules: {
-      "style/semi": ["error", "never"],
+      "style/semi": ["error", "always"],
     },
     typescript: true,
     vue: true,
@@ -18,5 +18,5 @@ export default antfu(
     rules: {
       "vue/operator-linebreak": ["error", "before"],
     },
-  }
+  },
 );

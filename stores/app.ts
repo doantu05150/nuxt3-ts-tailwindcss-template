@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 
 interface State {
-  theme: "dark" | "light";
+  theme: "dark" | "light"
 }
 
 export const useCounterStore = defineStore("app", {
@@ -9,11 +9,10 @@ export const useCounterStore = defineStore("app", {
   getters: {},
   actions: {
     setTheme(theme?: "dark" | "light") {
-      if (theme) {
+      if (theme)
         this.theme = theme;
-      } else {
+      else
         this.theme = this.theme === "dark" ? "light" : "dark";
-      }
     },
   },
 });

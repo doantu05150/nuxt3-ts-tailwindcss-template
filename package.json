@@ -11,6 +11,11 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
+  "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
+    "pinia": "^2.1.7",
+    "typescript": "^5.3.3"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.4.3",
     "@nuxt/devtools": "latest",
@@ -22,9 +27,5 @@
     "tailwindcss": "^3.3.6",
     "vue": "^3.3.10",
     "vue-router": "^4.2.5"
-  },
-  "dependencies": {
-    "@pinia/nuxt": "^0.5.1",
-    "pinia": "^2.1.7"
   }
 }

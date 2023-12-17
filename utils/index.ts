@@ -1,16 +1,12 @@
 import { MetaTags, appMeta } from "~/constants";
 import type { IMetaTag } from "~/types";
 
-export const generateSEOMetaTags = (
-  metatag: string | IMetaTag,
-  _addition?: Record<string, string>
-) => {
+export function generateSEOMetaTags(metatag: string | IMetaTag, _addition?: Record<string, string>) {
   let meta;
-  if (metatag && typeof metatag === "string") {
+  if (metatag && typeof metatag === "string")
     meta = MetaTags[metatag];
-  } else if (typeof metatag === "object") {
+  else if (typeof metatag === "object")
     meta = metatag;
-  }
 
   const title = meta?.title || appMeta.title;
   const description = meta?.description || appMeta.description;
@@ -27,4 +23,4 @@ export const generateSEOMetaTags = (
     twitterImage: () => image,
     ...addition,
   };
-};
+}
