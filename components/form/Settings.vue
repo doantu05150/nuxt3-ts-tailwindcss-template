@@ -23,7 +23,7 @@ const check = ref(false);
         <p class="form-item-label">
           Limit participants
         </p>
-        <SettingShare />
+        <BaseSelectInputNumber :disable="false" />
       </div>
     </div>
   </div>

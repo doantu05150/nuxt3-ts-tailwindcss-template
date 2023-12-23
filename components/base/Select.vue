@@ -151,7 +151,7 @@ defineExpose({
   <div ref="selectedContentRef" class="relative flex flex-col space-y-2">
     <span v-if="label" class="text-label">{{ label }}</span>
     <div
-      class="bg-basic-1 center-x px-3 sm:px-4 xl:px-5 h-10 rounded-lg cursor-pointer"
+      class="qselect"
       :class="[{ 'border border-basic-5': border }, selectedOption ? 'text-basic-12' : 'text-basic-9', stylesTrigger]"
       @click="isCollapse = !isCollapse"
     >

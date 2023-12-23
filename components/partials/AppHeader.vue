@@ -3,6 +3,7 @@ const menu = ref([
   { name: "Poll", path: "/poll/create" },
   { name: "Quiz/Test", path: "/" },
   { name: "Survey", path: "/" },
+  { name: "Explore", path: "/" },
 ]);
 </script>
 
@@ -16,8 +17,9 @@ const menu = ref([
       <nav class="flex-1">
         <ul class="centeral space-x-8 xl:space-x-10">
           <li v-for="nav in menu" :key="nav.path">
-            <NuxtLink :to="nav.path" class="text-basic-12 hover:text-basic-12/80 font-semibold">
+            <NuxtLink :to="nav.path" class="relative group text-basic-12 hover:text-main-blue-1 transition-color font-semibold">
               {{ nav.name }}
+              <div class="h-0.5 w-0 group-hover:w-full bg-main-blue-1 absolute -bottom-1 transition-[width] duration-200" />
             </NuxtLink>
           </li>
         </ul>

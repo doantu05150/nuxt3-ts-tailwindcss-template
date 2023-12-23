@@ -15,7 +15,7 @@ function goBack() {
 <template>
   <div>
     <div class="box-container w-full md:max-w-[280px] lg:max-w-[360px] h-fit">
-      <NuxtIcon name="arrow-left" class="text-basic-12 text-xl" @click="goBack" />
+      <NuxtIcon name="arrow-left" class="text-basic-12 text-xl cursor-pointer" @click="goBack" />
       <h4 class="text-gradient-green font-semibold text-2xl 2xl:text-3xl mb-2 mt-3">
         {{ title }}
       </h4>

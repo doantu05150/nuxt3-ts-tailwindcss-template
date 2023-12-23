@@ -49,6 +49,9 @@
   .qbutton {
     @apply relative font-medium inline-flex shrink-0 items-center justify-center align-middle ease-linear leading-tight whitespace-nowrap cursor-pointer outline-none m-0 appearance-none box-border select-none overflow-hidden hover:opacity-90;
   }
+  .qselect {
+    @apply h-10 bg-basic-1 center-x px-3 sm:px-4 xl:px-5 rounded-xl cursor-pointer;
+  }
   .bg-loading {
     @apply bg-gradient-to-r from-line-2 to-line-2/30 animate-pulse rounded-lg;
   }
