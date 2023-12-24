@@ -5,18 +5,18 @@
 @layer base {
   body {
     font-family: "Poppins" ;
-    @apply bg-background-main;
+    @apply bg-background-main overflow-x-hidden;
   }
 
   .nuxt-icon svg {
     margin-bottom: 0px !important;
   }
 
-  .header-container {
+  .main-container {
     @apply w-full p-container mx-auto;
   }
   @media (min-width: 1536px) {
-    .header-container {
+    .main-container {
       max-width: 1440px;
     }
   }
@@ -29,8 +29,11 @@
       max-width: 1024px;
     }
   }
-}
 
+  .bg-gradient-blue {
+    background: radial-gradient(79.68% 100% at 50.03% 100%, #1646F1 0%, #0033B5 100%);
+  }
+}
 
 @layer components {
   .text-gradient-green {

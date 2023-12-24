@@ -37,4 +37,7 @@ export default {
     // highest layer
     alert: "10030",
   },
+  spacing: {
+    header: "5rem",
+  },
 };

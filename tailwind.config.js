@@ -17,6 +17,12 @@ export default {
         center: true,
       },
       zIndex: themeConfig.zIndex,
+      height: {
+        header: themeConfig.spacing.header,
+      },
+      spacing: {
+        header: themeConfig.spacing.header,
+      },
     },
   },
   plugins: [

@@ -162,7 +162,7 @@ defineExpose({
           class="qbutton flex-1 justify-start font-medium"
         >
         <NuxtIcon
-          name="chervon-down"
+          name="chevron-down"
           class="text-xl transition-transform duration-150 ml-2"
           :class="isCollapse ? 'rotate-180' : ''"
         />
