@@ -7,8 +7,6 @@ definePageMeta({
 <template>
   <div>
     <HomeBanner />
-    <div class="h-screen">
-      aaa
-    </div>
+    <HomeFeature />
   </div>
 </template>

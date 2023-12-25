@@ -36,6 +36,9 @@
 }
 
 @layer components {
+  .py-section-common {
+    @apply py-8 sm:py-10 xl:py-section
+  }
   .text-gradient-green {
     background: linear-gradient(123deg, #05DEDF 4.13%, #5CF1B7 42.86%, #04A1B7 87.68%);
     background-clip: text;
@@ -51,6 +54,12 @@
   }
   .qbutton {
     @apply relative font-medium inline-flex shrink-0 items-center justify-center align-middle ease-linear leading-tight whitespace-nowrap cursor-pointer outline-none m-0 appearance-none box-border select-none overflow-hidden hover:opacity-90;
+  }
+  .qbutton-group {
+    @apply flex flex-nowrap border border-main-blue-1 divide-x divide-main-blue-1 rounded-xl overflow-hidden;
+  }
+  .qbutton-group button {
+    @apply qbutton py-3 px-6;
   }
   .qselect {
     @apply h-10 bg-basic-1 center-x px-3 sm:px-4 xl:px-5 rounded-xl cursor-pointer;

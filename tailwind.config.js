@@ -15,6 +15,7 @@ export default {
     extend: {
       container: {
         center: true,
+        padding: "1rem",
       },
       zIndex: themeConfig.zIndex,
       height: {
@@ -22,6 +23,7 @@ export default {
       },
       spacing: {
         header: themeConfig.spacing.header,
+        section: themeConfig.spacing.section,
       },
     },
   },

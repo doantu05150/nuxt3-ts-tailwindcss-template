@@ -39,5 +39,6 @@ export default {
   },
   spacing: {
     header: "5rem",
+    section: "3.5rem",
   },
 };
