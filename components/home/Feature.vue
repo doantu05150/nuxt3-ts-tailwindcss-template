@@ -46,11 +46,11 @@ const currentFeature = computed(() => {
 </script>
 
 <template>
-  <section class="min-h-screen py-section-common">
+  <section class="py-section-common">
     <h1 class="text-feature">
       Features
     </h1>
-    <div class="container bg-blur -mt-6 lg:-mt-14 xl:-mt-24 py-10 xl:py-14">
+    <div class="main-container bg-blur -mt-6 lg:-mt-14 xl:-mt-24 py-10 xl:py-14">
       <div class="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-16">
         <div class="flex-1">
           <!-- tabs -->

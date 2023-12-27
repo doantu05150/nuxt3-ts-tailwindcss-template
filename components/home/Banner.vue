@@ -1,5 +1,5 @@
 <template>
-  <section class="section-banner mb-8 sm:mb-10 xl:mb-section min-h-svh flex h-1 bg-gradient-blue pt-header text-basic-1">
+  <section class="bg-lines mb-8 sm:mb-10 xl:mb-section min-h-svh flex h-1 bg-gradient-blue pt-header text-basic-1">
     <div class="main-container flex flex-col justify-between">
       <div class="py-12 sm:py-14 lg:py-16 xl:py-20 centeral">
         <h1 class="text-title centeral flex-col mx-auto sm:gap-5 w-full">
@@ -18,13 +18,6 @@
 
 <style scoped>
 .text-title span {
-  @apply text-5xl md:text-[72px] font-bold;
-}
-
-.section-banner {
-  background-image: url(~/assets/images/background/line1.svg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  @apply text-5xl md:text-7xl font-bold;
 }
 </style>

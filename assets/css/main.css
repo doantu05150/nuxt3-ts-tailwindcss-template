@@ -7,11 +7,6 @@
     font-family: "Poppins" ;
     @apply bg-background-main overflow-x-hidden;
   }
-
-  .nuxt-icon svg {
-    margin-bottom: 0px !important;
-  }
-
   .main-container {
     @apply w-full p-container mx-auto;
   }
@@ -33,11 +28,20 @@
   .bg-gradient-blue {
     background: radial-gradient(79.68% 100% at 50.03% 100%, #1646F1 0%, #0033B5 100%);
   }
+  .bg-lines {
+    background-image: url(~/assets/images/background/line1.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 @layer components {
   .py-section-common {
     @apply py-8 sm:py-10 xl:py-section
+  }
+  .section-heading {
+    @apply text-basic-12 text-3xl sm:text-4xl lg:text-5xl text-center font-bold
   }
   .text-gradient-green {
     background: linear-gradient(123deg, #05DEDF 4.13%, #5CF1B7 42.86%, #04A1B7 87.68%);
@@ -103,4 +107,8 @@
   .form-item-description {
     @apply text-basic-7 text-sm;
   }
+}
+
+.nuxt-icon svg {
+  margin: 0px !important;
 }

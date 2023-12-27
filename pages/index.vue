@@ -8,5 +8,6 @@ definePageMeta({
   <div>
     <HomeBanner />
     <HomeFeature />
+    <HomeCoreValues />
   </div>
 </template>
